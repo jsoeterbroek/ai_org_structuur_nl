@@ -31,18 +31,21 @@ def provision_agent_fs(agent: dict, agents_source_dir: Path) -> None:
         )
         return
 
-    # SOUL.md lives at agents/{category}/{name_without_category_prefix}/SOUL.md
+    # Agent source dir lives at agents/{category}/{name_without_category_prefix}/
     category_prefix = f"{category}-"
     name_suffix = name.removeprefix(category_prefix) if category else name
-    soul_src = agents_source_dir / category / name_suffix / "SOUL.md"
+    agent_src_dir = agents_source_dir / category / name_suffix
 
-    if not soul_src.exists():
-        print(f"  Warning: SOUL.md not found at {soul_src} — skipping copy.", file=sys.stderr)
+    md_files = list(agent_src_dir.glob("*.md"))
+    if not md_files:
+        print(f"  Warning: no .md files found in {agent_src_dir} — skipping copy.", file=sys.stderr)
         return
 
-    soul_dst = Path(workspace) / "SOUL.md"
-    shutil.copy2(soul_src, soul_dst)
-    print(f"  Copied SOUL.md:     {soul_src} -> {soul_dst}")
+    workspace_path = Path(workspace)
+    for src in md_files:
+        dst = workspace_path / src.name
+        shutil.copy2(src, dst)
+        print(f"  Copied:  {src} -> {dst}")
 
 
 def register_agent(agent_id: str) -> bool:
