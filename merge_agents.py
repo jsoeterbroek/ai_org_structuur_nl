@@ -56,7 +56,7 @@ def register_agent(agent_id: str) -> bool:
     return True
 
 
-def fetch_live_agents() -> list[dict] | None:
+def fetch_live_agents():
     """Call 'openclaw agents list' and return the parsed agent list, or None on failure."""
     cmd = [OPENCLAW_CLI, "agents", "list"]
     print(f"\nRunning: {' '.join(cmd)}")
@@ -93,7 +93,7 @@ def _flatten(value: object, prefix: str = "") -> dict:
     return items
 
 
-def compare_and_report(incoming_agents: list[dict], live_agents: list[dict]) -> None:
+def compare_and_report(incoming_agents, live_agents):
     """Compare agents.json entries against the live CLI list and print differences."""
     print("\n--- Agent comparison (agents.json vs openclaw agents list) ---")
 
