@@ -1,0 +1,21 @@
+{
+  "agents": [
+    {
+      "id": "security-so",
+      "category": "security",
+      "name": "security-so",
+      "workspace": "/Users/openclaw/.openclaw/workspace-security-so",
+      "agentDir": "/Users/openclaw/.openclaw/agents/security-se/agent",
+      "primary_model": "openrouter/anthropic/claude-opus-4.6",
+      "api_key": "inherit",
+      "skills": {},
+      "channels": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Bob",
+        "emoji": "🧬",
+        "avatar": "avatars/research.png"
+      }
+    }
+  ]
+}
