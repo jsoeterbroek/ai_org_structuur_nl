@@ -1,0 +1,579 @@
+{
+  "agents": [
+    {
+      "isDefault": false,
+      "id": "security-so",
+      "category": "security",
+      "name": "security-so",
+      "workspace": "~/.openclaw/workspace-security-so",
+      "agentDir": "~/.openclaw/agents/security-so/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "description here",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Rob Sternward",
+        "emoji": "\ud83d\udee1\ufe0f",
+        "avatar": "workspace-shared/avatars/rob-sternward.png",
+        "e-mail": "r.sternward@tayler-vdl.nl",
+        "telegram_bot": "@taylervld_rob_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_ROB",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_ROB"
+      },
+      "bindings": {
+        "agentId": "security-so",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "security-so"
+          },
+          {
+            "channel": "discord",
+            "accountId": "rob"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "security-so",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "security-so",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "marketing-blogger",
+      "category": "marketing",
+      "name": "marketing-blogger",
+      "workspace": "~/.openclaw/workspace-marketing-blogger",
+      "agentDir": "~/.openclaw/agents/marketing-blogger/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "description here",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Dana Merill",
+        "emoji": "\u270d ",
+        "avatar": "workspace-shared/avatars/dana-merill.png",
+        "e-mail": "d.merril@tayler-vdl.nl",
+        "telegram_bot": "@taylervld_dana_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_DANA",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_DANA"
+      },
+      "bindings": {
+        "agentId": "marketing-blogger",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "marketing-blogger"
+          },
+          {
+            "channel": "discord",
+            "accountId": "marketing-blogger"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "marketing-blogger",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "marketing-blogger",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "business-corporate-researcher",
+      "category": "business",
+      "name": "business-corporate-researcher",
+      "workspace": "~/.openclaw/workspace-business-corporate-researcher",
+      "agentDir": "~/.openclaw/agents/business-corporate-researcher/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "description here",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Ekiaam Stormwind",
+        "emoji": "\ud83d\udd2c",
+        "avatar": "workspace-shared/avatars/ekiaam.png",
+        "e-mail": "e.stormwind@tayler-vdl.nl",
+        "telegram_bot": "@taylervld_estormwind_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_EKIAAM",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_EKIAAM"
+      },
+      "bindings": {
+        "agentId": "business-corporate-researcher",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "estormwind"
+          },
+          {
+            "channel": "discord",
+            "accountId": "business-corporate-researcher"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "business-corporate-researcher",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "business-corporate-researcher",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "it-coder",
+      "category": "it",
+      "name": "it-coder",
+      "workspace": "~/.openclaw/workspace-it-coder",
+      "agentDir": "~/.openclaw/agents/it-coder/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "description here",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Max Veldstra",
+        "emoji": "\ud83d\udcbb",
+        "avatar": "workspace-shared/avatars/mad-max.png",
+        "e-mail": "mad.max@tayler-vdl.nl",
+        "telegram_bot": "@taylervld_madmax_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_MAX",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_MAX"
+      },
+      "bindings": {
+        "agentId": "it-coder",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "it-coder"
+          },
+          {
+            "channel": "discord",
+            "accountId": "it-coder"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "it-coder",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "it-coder",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "finance-bookkeeper",
+      "category": "finance",
+      "name": "finance-bookkeeper",
+      "workspace": "~/.openclaw/workspace-finance-bookkeeper",
+      "agentDir": "~/.openclaw/agents/finance-bookkeeper/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "description here",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Bas Koopmans",
+        "emoji": "\ud83d\udcd2",
+        "avatar": "workspace-shared/avatars/bas-koopmans.png",
+        "e-mail": "finance@tayler-vdl.nl",
+        "telegram_bot": "@taylervld_bas_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_BAS",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_BAS"
+      },
+      "bindings": {
+        "agentId": "finance-bookkeeper",
+        "match": [
+          {
+            "channel": "discord",
+            "accountId": "finance-bookkeeper"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "finance-bookkeeper",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "finance-bookkeeper",
+          "enabled": false
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "it-sysadmin",
+      "category": "it",
+      "name": "it-sysadmin",
+      "workspace": "~/.openclaw/workspace-it-sysadmin",
+      "agentDir": "~/.openclaw/agents/it-sysadmin/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "Systeembeheerder",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Roel Kieft",
+        "emoji": "\ud83d\udda5\ufe0f",
+        "avatar": "workspace-shared/avatars/roel-kieft.png",
+        "e-mail": "r.kieft@tayler-vld.nl",
+        "telegram_bot": "@taylervld_roel_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_ROEL",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_ROEL"
+      },
+      "bindings": {
+        "agentId": "it-sysadmin",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "it-sysadmin"
+          },
+          {
+            "channel": "discord",
+            "accountId": "it-sysadmin"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "it-sysadmin",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "it-sysadmin",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "creative-podcast-producer",
+      "category": "creative",
+      "name": "creative-podcast-producer",
+      "workspace": "~/.openclaw/workspace-creative-podcast-producer",
+      "agentDir": "~/.openclaw/agents/creative-podcast-producer/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "Podcast Producer",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Joris Vermeer",
+        "emoji": "\ud83c\udf99\ufe0f",
+        "avatar": "workspace-shared/avatars/joris-vermeer.png",
+        "e-mail": "j.vermeer@tayler-vld.nl",
+        "telegram_bot": "@taylervld_joris_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_JORIS",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_JORIS"
+      },
+      "bindings": {
+        "agentId": "creative-podcast-producer",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "creative-podcast-producer"
+          },
+          {
+            "channel": "discord",
+            "accountId": "creative-podcast-producer"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "creative-podcast-producer",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "creative-podcast-producer",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "creative-video-scripter",
+      "category": "creative",
+      "name": "creative-video-scripter",
+      "workspace": "~/.openclaw/workspace-creative-video-scripter",
+      "agentDir": "~/.openclaw/agents/creative-video-scripter/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "Video Scripter",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Fleur van Dijck",
+        "emoji": "\ud83c\udfac",
+        "avatar": "workspace-shared/avatars/fleur-vandijck.png",
+        "e-mail": "f.vandijck@tayler-vld.nl",
+        "telegram_bot": "@taylervld_fleur_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_FLEUR",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_FLEUR"
+      },
+      "bindings": {
+        "agentId": "creative-video-scripter",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "creative-video-scripter"
+          },
+          {
+            "channel": "discord",
+            "accountId": "creative-video-scripter"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "creative-video-scripter",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "creative-video-scripter",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "marketing-seo-writer",
+      "category": "marketing",
+      "name": "marketing-seo-writer",
+      "workspace": "~/.openclaw/workspace-marketing-seo-writer",
+      "agentDir": "~/.openclaw/agents/marketing-seo-writer/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "SEO Writer",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Tim Hoekstra",
+        "emoji": "\ud83d\udd0d",
+        "avatar": "workspace-shared/avatars/tim-hoekstra.png",
+        "e-mail": "t.hoekstra@tayler-vld.nl",
+        "telegram_bot": "@taylervld_tim_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_TIM",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_TIM"
+      },
+      "bindings": {
+        "agentId": "marketing-seo-writer",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "marketing-seo-writer"
+          },
+          {
+            "channel": "discord",
+            "accountId": "marketing-seo-writer"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "marketing-seo-writer",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "marketing-seo-writer",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "marketing-social-media",
+      "category": "marketing",
+      "name": "marketing-social-media",
+      "workspace": "~/.openclaw/workspace-marketing-social-media",
+      "agentDir": "~/.openclaw/agents/marketing-social-media/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "Social Media Manager",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Roos Lammers",
+        "emoji": "\ud83d\udcf1",
+        "avatar": "workspace-shared/avatars/roos-lammers.png",
+        "e-mail": "r.lammers@tayler-vld.nl",
+        "telegram_bot": "@taylervld_roos_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_ROOS",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_ROOS"
+      },
+      "bindings": {
+        "agentId": "marketing-social-media",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "marketing-social-media"
+          },
+          {
+            "channel": "discord",
+            "accountId": "marketing-social-media"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "marketing-social-media",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "marketing-social-media",
+          "enabled": true
+        }
+      }
+    },
+    {
+      "isDefault": false,
+      "id": "legal-co",
+      "category": "legal",
+      "name": "legal-co",
+      "workspace": "~/.openclaw/workspace-legal-co",
+      "agentDir": "~/.openclaw/agents/legal-co/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "Compliance Officer",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Hanneke Bronkhorst",
+        "emoji": "\ud83d\udcd2",
+        "avatar": "workspace-shared/avatars/bas-koopmans.png",
+        "e-mail": "finance@tayler-vdl.nl",
+        "telegram_bot": "@taylervld_bas_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_CO",
+        "telegramApiKeyVar": "NA"
+      },
+      "bindings": {
+        "agentId": "legal-co",
+        "match": [
+          {
+            "channel": "discord",
+            "accountId": "legal-co"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "legal-co",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "legal-co",
+          "enabled": false
+        }
+      }
+    }
+  ]
+}
