@@ -3,14 +3,33 @@
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
-OPENCLAW_BASE = Path("/Users/openclaw")
-OPENCLAW_CLI = "/opt/homebrew/bin/openclaw"
-OPENCLAW_CONFIG_DEFAULT = "/Users/openclaw/.openclaw/openclaw.json"
+
+def _load_dotenv(path: Path) -> dict:
+    """Parse a simple KEY=VALUE .env file, ignoring comments and blank lines."""
+    result = {}
+    if not path.exists():
+        return result
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            result[key.strip()] = value.strip().strip('"').strip("'")
+    return result
+
+
+_env = _load_dotenv(Path.home() / ".env")
+
+OPENCLAW_BASE = Path(_env.get("OPENCLAW_BASE", "/home/jsoeterbroek/.openclaw"))
+OPENCLAW_CLI = _env.get("OPENCLAW_CLI", "/usr/bin/openclaw")
+OPENCLAW_CONFIG_DEFAULT = _env.get("OPENCLAW_CONFIG_DEFAULT", "/home/jsoeterbroek/.openclaw/openclaw.json")
 
 
 def load_json(path: Path) -> dict:
@@ -19,22 +38,20 @@ def load_json(path: Path) -> dict:
 
 
 def provision_agent_fs(agent: dict, agents_source_dir: Path) -> None:
-    """Copy SOUL.md into the agent workspace (workspace dir is created by the CLI)."""
+    """Copy *.md into the agent workspace (workspace dir is created by the CLI)."""
     category = agent.get("category", "")
     name = agent.get("name", agent.get("id", ""))
     workspace = agent.get("workspace")
 
     if not workspace:
         print(
-            f"  Warning: agent '{name}' missing workspace — skipping SOUL.md copy.",
+            f"  Warning: agent '{name}' missing workspace — skipping SOUL.md, IDENTITY.md copy.",
             file=sys.stderr,
         )
         return
 
-    # Agent source dir lives at agents/{category}/{name_without_category_prefix}/
-    category_prefix = f"{category}-"
-    name_suffix = name.removeprefix(category_prefix) if category else name
-    agent_src_dir = agents_source_dir / category / name_suffix
+    # Agent source dir lives at agents/{category}/{name}/
+    agent_src_dir = agents_source_dir / category / name
 
     md_files = list(agent_src_dir.glob("*.md"))
     if not md_files:
@@ -48,9 +65,31 @@ def provision_agent_fs(agent: dict, agents_source_dir: Path) -> None:
         print(f"  Copied:  {src} -> {dst}")
 
 
-def register_agent(agent_id: str) -> bool:
+def register_agent(agent: dict) -> bool:
     """Call the openclaw CLI to register the agent. Returns True on success."""
+    agent_id = agent["id"]
     cmd = [OPENCLAW_CLI, "agents", "add", agent_id]
+
+    if model := agent.get("model"):
+        cmd += ["--model", model]
+    if workspace := agent.get("workspace"):
+        cmd += ["--workspace", str(Path(workspace).expanduser())]
+
+    #if tools := agent.get("tools"):
+    #    # tools may be a list or a comma-separated string
+    #    if isinstance(tools, list):
+    #        tools = ",".join(str(t) for t in tools)
+    #    cmd += ["--tools", tools]
+    #if description := agent.get("description"):
+    #    cmd += ["--description", description]
+    #if max_tokens := agent.get("max-tokens"):
+    #    cmd += ["--max-tokens", str(max_tokens)]
+    #if (temperature := agent.get("temperature")) is not None:
+    #    cmd += ["--temperature", str(temperature)]
+
+    # make non-interactive
+    cmd += ["--non-interactive"]
+
     print(f"  Running: {' '.join(cmd)}")
     result = subprocess.run(cmd)
     if result.returncode != 0:
@@ -165,7 +204,10 @@ def main() -> None:
     args = parser.parse_args()
 
     if not OPENCLAW_BASE.exists():
-        print(f"Error: base path {OPENCLAW_BASE} does not exist.", file=sys.stderr)
+        print(
+            f"Error: {OPENCLAW_BASE} does not exists.",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     agents_path = Path(args.agents_file)
@@ -204,7 +246,7 @@ def main() -> None:
             continue
 
         print(f"Adding agent: {agent_id}")
-        if register_agent(agent_id):
+        if register_agent(agent):
             provision_agent_fs(agent, agents_source_dir)
             added += 1
         else:

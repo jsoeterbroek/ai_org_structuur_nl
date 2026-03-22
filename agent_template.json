@@ -1,0 +1,35 @@
+{
+  "agent": [
+      "isDefault": false,
+      "id": "[DEPT]-[FUNCTION]",
+      "category": "[DEPT]",
+      "name": "[DEPT]-[FUNCTION]",
+      "workspace": "~/.openclaw/workspace-[DEPT]-[FUNCTION]",
+      "agentDir": "~/.openclaw/agents/[DEPT]-[FUNCTION]/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "mc-day-summary",
+        "mc-session-start",
+        "agentmail"
+      ],
+      "description": "[DESCRIPTION]",
+      "max-tokens": 64000,
+      "temperature": 0.1,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "[HUMAN NAME]",
+        "emoji": "[EMOJI]",
+        "avatar": "workspace-shared/avatars/[ID].png",
+        "e-mail": "[EMAIL]",
+        "telegram_bot": "[TELEGRAM_BOT]",
+        "discordApiKeyVar": "[DISCORD_BOT_TOKEN]",
+        "telegramApiKeyVar": "NA"
+      }
+    }
+  ]
+}
