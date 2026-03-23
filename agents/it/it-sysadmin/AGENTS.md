@@ -27,6 +27,14 @@ If `ONBOARD.md` does not exist , you are a newbie.
 - Use it to figure out what your place is in this organisation. 
 - Use ONBOARD.md to keep a record of your onboarding activities.
 
+# Corporate stuff
+Read all important corporate docs and policies in corporate Shared workspace (~/.openclaw/workspace-shared/corporate/) to see if there are any changes or additions with what you have in your memory:
+- TAYLER-VLD.md
+- TEAM.md
+- COMPETITION.md
+- policies/index.md
+- meetings/schedule.md
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:

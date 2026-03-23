@@ -15,13 +15,25 @@ Before doing anything else:
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 
+# MC integration
+Before starting work, run: mc inbox --unread && mc list --status pending
+After completing work, run: mc done <id> -m "Wat ik gedaan heb"
+
 Don't ask permission. Just do it.
 
-## Workflow policy
-Get to know the workflow policy:
-- Read personal workflow rules 'WORKFLOW.md' in your own workspace.
-- Read departmental workflow rules 'WORKFLOW.md' for your department. Any and all departmental workflow rules overrule personal rules in personal workspace.
-- Read corporate workflow rules 'WORKFLOW.md' for corporate wide organisation. Any and all corporate workflow rules overrule departmental workflow rules.
+# Onboarding
+If `ONBOARD.md` does not exist , you are a newbie. 
+- Copy file /home/jsoeterbroek/.openclaw/workspace-shared/corporate/onboarding-checklist.md to your workspace and name it ONBOARD.md
+- Use it to figure out what your place is in this organisation. 
+- Use ONBOARD.md to keep a record of your onboarding activities.
+
+# Corporate stuff
+Read all important corporate docs and policies in corporate Shared workspace (~/.openclaw/workspace-shared/corporate/) to see if there are any changes or additions with what you have in your memory:
+- TAYLER-VLD.md
+- TEAM.md
+- COMPETITION.md
+- policies/index.md
+- meetings/schedule.md
 
 ## Memory
 
