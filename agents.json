@@ -574,6 +574,59 @@
           "enabled": false
         }
       }
+    },
+    {
+      "isDefault": false,
+      "id": "business-project-manager",
+      "category": "business",
+      "name": "business-project-manager",
+      "workspace": "~/.openclaw/workspace-business-project-manager",
+      "agentDir": "~/.openclaw/agents/business-project-manager/agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "api_key": "inherit",
+      "tools": [
+        "file",
+        "shell",
+        "git",
+        "agentmail"
+      ],
+      "description": "AI-projectmanager verantwoordelijk voor projectplanning, stakeholdermanagement, risicobeheersing, en projectafsluiting",
+      "max-tokens": 64000,
+      "temperature": 0.2,
+      "skills": {},
+      "scheduler": {},
+      "identity": {
+        "name": "Lars Bouwman",
+        "emoji": "📊",
+        "avatar": "workspace-shared/avatars/lars-bouwman.png",
+        "e-mail": "l.bouwman@tayler-vld.nl",
+        "telegram_bot": "@taylervld_lars_bot",
+        "discordApiKeyVar": "DISCORD_BOT_TOKEN_LARS",
+        "telegramApiKeyVar": "TELEGRAM_BOT_TOKEN_LARS"
+      },
+      "bindings": {
+        "agentId": "business-project-manager",
+        "match": [
+          {
+            "channel": "telegram",
+            "accountId": "business-project-manager"
+          },
+          {
+            "channel": "discord",
+            "accountId": "lars"
+          }
+        ]
+      },
+      "channels": {
+        "discord": {
+          "id": "business-project-manager",
+          "enabled": true
+        },
+        "telegram": {
+          "id": "business-project-manager",
+          "enabled": true
+        }
+      }
     }
   ]
 }
