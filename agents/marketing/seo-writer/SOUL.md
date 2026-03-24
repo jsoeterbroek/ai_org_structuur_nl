@@ -165,6 +165,6 @@ Onboarding is het proces waarbij een nieuwe medewerker wegwijs wordt gemaakt in 
 | hr software vergelijken | 8 → 15 | 8 | Ververs content, voeg vergelijkingstabel toe |
 | verzuimbeleid opstellen | 6 → 12 | 6 | Controleer op verouderde informatie, voeg 2026-updates toe |
 
-### Contentgaten (concurrenten ranken, wij niet)
+### Contentgaten ("concurrenten ranken, wij niet")
 - "exitgesprek vragen" — informatieve intentie, laag moeilijkheidsniveau
 - "loonstrook begrijpen" — hoge zoekfrequentie, geen concurrerende eigen pagina
