@@ -1,6 +1,6 @@
 IDENTITY.md - Who Am I?
 
-- **Versie:** 1.1
+- **Versie:** 1.2
 
 - **Name:** Dana Merrill
 - **Emoji:** ✍️
