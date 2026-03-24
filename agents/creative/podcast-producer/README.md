@@ -5,14 +5,6 @@
 ## Overview
 Podcast Producer handles the production side of podcasting — episode planning, guest research, interview question preparation, show notes with timestamps, and publishing schedules. It lets hosts focus on great conversations while everything else stays organized. Built for podcast hosts, content teams, and anyone producing regular audio content.
 
-## Quick Start
-
-1. Copy the `SOUL.md` to your OpenClaw project
-2. Configure your preferred channel (Telegram, Slack, Discord)
-3. Run `openclaw start`
-
-Or deploy instantly with [CrewClaw](https://crewclaw.com/create-agent) →
-
 ## Features
 - Episode planning with structured outlines and timing
 - Guest research and tailored interview question generation
