@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+DRY_RUN=false
+if [[ "${1:-}" == "--dry-run" ]]; then
+    DRY_RUN=true
+    echo "[DRY RUN] No files will be copied."
+fi
+
 AGENTS_JSON="/Users/jsoeterbroek/Development/ai_org_structuur_nl/agents.json"
 AGENTS_DIR="/Users/jsoeterbroek/Development/ai_org_structuur_nl/agents"
 
@@ -29,7 +35,9 @@ for entry in "${AGENT_ENTRIES[@]}"; do
         continue
     fi
 
-    mkdir -p "${workspace}"
+    if [[ "${DRY_RUN}" == false ]]; then
+        mkdir -p "${workspace}"
+    fi
 
     for src_file in "${src_dir}"/*.md; do
         [[ -f "${src_file}" ]] || continue
@@ -39,8 +47,12 @@ for entry in "${AGENT_ENTRIES[@]}"; do
         if [[ -f "${dest_file}" ]] && [[ "${dest_file}" -nt "${src_file}" ]]; then
             echo "  Skipping, file ${filename} is newer in workdir"
         else
-            echo "  Copying ${filename}"
-            cp "${src_file}" "${dest_file}"
+            if [[ "${DRY_RUN}" == true ]]; then
+                echo "  [DRY RUN] Would copy ${filename}"
+            else
+                echo "  Copying ${filename}"
+                cp "${src_file}" "${dest_file}"
+            fi
         fi
     done
 done
