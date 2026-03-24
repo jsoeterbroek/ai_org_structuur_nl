@@ -7,8 +7,8 @@ if [[ "${1:-}" == "--dry-run" ]]; then
     echo "[DRY RUN] No files will be copied."
 fi
 
-AGENTS_JSON="/Users/jsoeterbroek/Development/ai_org_structuur_nl/agents.json"
-AGENTS_DIR="/Users/jsoeterbroek/Development/ai_org_structuur_nl/agents"
+AGENTS_JSON="../agents.json"
+AGENTS_DIR="../agents"
 
 # Build list of "agent_id|department|workspace" from agents.json
 mapfile -t AGENT_ENTRIES < <(python3 -c "
@@ -25,7 +25,8 @@ echo "Found ${#AGENT_ENTRIES[@]} agents."
 
 for entry in "${AGENT_ENTRIES[@]}"; do
     IFS='|' read -r agent_id dept workspace <<< "${entry}"
-    src_dir="${AGENTS_DIR}/${dept}/${agent_id}"
+    agent_short="${agent_id#${dept}-}"
+    src_dir="${AGENTS_DIR}/${dept}/${agent_short}"
 
     echo ""
     echo "--- Agent: ${agent_id} (${dept}) -> ${workspace}"
